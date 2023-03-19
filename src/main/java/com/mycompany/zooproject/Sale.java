@@ -47,7 +47,7 @@ public class Sale {
      * @return
      */
     public void sale() {
-        // TODO implement here right now
+        // TODO implement here tomorrow
       
     }
 
