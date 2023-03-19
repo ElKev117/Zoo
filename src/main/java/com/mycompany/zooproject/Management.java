@@ -10,6 +10,7 @@ public class Management {
      * Default constructor
      */
     public Management() {
+        
     }
 
     /**

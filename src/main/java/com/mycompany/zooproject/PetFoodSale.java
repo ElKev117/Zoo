@@ -5,7 +5,13 @@ import java.util.*;
  * 
  */
 public class PetFoodSale extends Sale {
-
+    /**
+     * 
+     */
+    private float price;
+    private String product;
+    private int quantity;
+    
     /**
      * Default constructor
      */
@@ -13,19 +19,33 @@ public class PetFoodSale extends Sale {
     }
 
     /**
-     * 
+     * Getters and setters
      */
-    private float price;
+    public float getPrice() {
+        return price;
+        // TODO implement here
+    }
 
-    /**
-     * 
-     */
-    private String product;
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
-    /**
-     * 
-     */
-    private int quantity;
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     /**
      * @return

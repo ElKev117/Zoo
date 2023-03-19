@@ -4,24 +4,48 @@ import java.util.*;
 /**
  * 
  */
-public class Offer extends Sale {
-
+public class Offer implements Plans {
+    /**
+     * 
+     */
+    private float plan;
+ 
+    
     /**
      * Default constructor
      */
-    public Offer() {
+    public Offer(int plan) {
+       if(plan==1){
+           this.plan = Plans.PLAN_1;
+       } else if(plan==2) {
+           this.plan = Plans.PLAN_2;
+       } else if(plan==3){
+           this.plan = Plans.PLAN_3;
+       } else if(plan==4){
+           this.plan = Plans.PLAN_4;
+       } else if(plan==5){
+           this.plan = Plans.PLAN_5;
+       }
     }
 
     /**
-     * 
+     * Getters and setters
      */
-    private String plan;
-
-    /**
-     * 
-     */
-    public void Operation1() {
-        // TODO implement here
+    public float getPlan() {
+        return plan;
     }
 
+    public void setPlan(float plan) {
+        this.plan = plan;
+    }
+    
+    
+
+    
+    
+
+    
 }
+
+
+

@@ -7,21 +7,44 @@ import java.util.*;
 public class FoodSale extends Sale {
 
     /**
-     * Default constructor
+     * 
+     */
+    private String product;
+    
+    /**
+     * Constructors
      */
     public FoodSale() {
     }
 
-    /**
-     * 
-     */
-    private String product;
-
-    /**
-     * 
-     */
-    public void Operation1() {
-        // TODO implement here
+    public FoodSale(String product) {
+        this.product = product;
     }
+
+    public FoodSale(String product, float price, int quantity) {
+        super(price, quantity);
+        this.product = product;
+    }
+    
+    /**
+     * Getters and setters
+     */
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+    
+    
+    
+    
+    
+    
+
+    
+
+   
 
 }

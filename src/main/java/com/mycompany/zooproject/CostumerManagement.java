@@ -5,44 +5,66 @@ import java.util.*;
  * 
  */
 public class CostumerManagement extends Management {
-
     /**
-     * Default constructor
+     * Parameters
+     */
+    private ArrayList<Costumer> costumer;
+    
+    /**
+     * Constructor
      */
     public CostumerManagement() {
     }
 
-    /**
-     * 
+    public CostumerManagement(ArrayList<Costumer> costumer) {
+        this.costumer = costumer;
+    }
+
+     /**
+     * Getters and setters
      */
-    private ArrayList<Costumer> costumer;
+    public ArrayList<Costumer> getCostumer() {
+        return costumer;
+    }
+
+    public void setCostumer(ArrayList<Costumer> costumer) {
+        this.costumer = costumer;
+    }
+
 
     /**
+     * Methods
+     */
+    public void addCostumer(Costumer c) {
+        costumer.add(c);
+    }
+    
+    public Costumer findCostumer(String id) {
+        
+        for(Costumer c : costumer){
+            if(c.getId().equals(id)){
+                return c;
+            }
+        }
+        
+        System.out.println("No existe el consumidor");
+        return null;
+    }
+    
+    /**
      * 
      */
-    public void addCostumer() {
-        // TODO implement here
+    public void editCostumer(String id, String newId) {
+        Costumer c = findCostumer(id);
+        c.setId(newId);
     }
 
     /**
      * 
      */
-    public void deleteCostumer() {
-        // TODO implement here
+    public void deleteCostumer(String id) {
+        costumer.remove(findCostumer(id));
     }
 
-    /**
-     * 
-     */
-    public void editCostumer() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void showCostumer() {
-        // TODO implement here
-    }
 
 }

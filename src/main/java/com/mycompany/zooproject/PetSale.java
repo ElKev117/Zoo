@@ -18,6 +18,21 @@ public class PetSale extends PetAnimal {
         
     }
 
+    public PetSale(float price, Date saleDate, String name, String code) {
+        super(name, code);
+        this.price = price;
+        this.saleDate = saleDate;
+    }
+
+    public PetSale(float price, Date saleDate) {
+        this.price = price;
+        this.saleDate = saleDate;
+    }
+    
+    
+    /**
+     * getters and setters
+     */
     public float getPrice() {
         return price;
     }
