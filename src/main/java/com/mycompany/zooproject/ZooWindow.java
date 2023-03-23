@@ -33,6 +33,30 @@ public class ZooWindow extends javax.swing.JFrame {
         btnGoBuyPet = new javax.swing.JButton();
         btnGoBuyTicket3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tfID = new javax.swing.JTextField();
+        tfName1 = new javax.swing.JTextField();
+        tfAge = new javax.swing.JTextField();
+        btnAddCostumer = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        tfAnimalCode = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        tfAnimalName1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        tfAnimalAge = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tfAnimalState = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tfAnimalGender1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tfAnimalOrigin = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        tfAnimalMammal = new javax.swing.JTextField();
+        btnAddAnimal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,15 +114,242 @@ public class ZooWindow extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Administración", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Mono", 2, 18))); // NOI18N
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Liberation Mono", 2, 15))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel3.setText("Documento ");
+
+        jLabel4.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel4.setText("Edad");
+
+        tfID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIDActionPerformed(evt);
+            }
+        });
+
+        tfName1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfName1ActionPerformed(evt);
+            }
+        });
+
+        tfAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAgeActionPerformed(evt);
+            }
+        });
+
+        btnAddCostumer.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnAddCostumer.setText("Agregar cliente");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfName1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAddCostumer)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tfName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(btnAddCostumer)
+                .addGap(31, 31, 31))
+        );
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Animal", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Mono", 2, 15))); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel5.setText("Nombre");
+
+        tfAnimalCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalCodeActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel6.setText("Código");
+
+        tfAnimalName1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalName1ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel7.setText("Edad");
+
+        tfAnimalAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalAgeActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel8.setText("Origen");
+
+        tfAnimalState.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalStateActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel9.setText("Género");
+
+        tfAnimalGender1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalGender1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel10.setText("Estado");
+
+        tfAnimalOrigin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalOriginActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
+        jLabel11.setText("Mamífero");
+
+        tfAnimalMammal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAnimalMammalActionPerformed(evt);
+            }
+        });
+
+        btnAddAnimal.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnAddAnimal.setText("Agregar animal");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalGender1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalState, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalAge, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalName1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalCode, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAnimalOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAddAnimal)
+                            .addComponent(tfAnimalMammal, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(tfAnimalName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tfAnimalCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tfAnimalAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tfAnimalGender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAnimalState, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tfAnimalOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tfAnimalMammal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(btnAddAnimal)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 305, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -139,7 +390,7 @@ public class ZooWindow extends javax.swing.JFrame {
                 .addComponent(btnGoBuyAnimalFood, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGoBuyPeopleFood, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -173,6 +424,46 @@ public class ZooWindow extends javax.swing.JFrame {
     private void btnGoBuyTicket3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBuyTicket3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGoBuyTicket3ActionPerformed
+
+    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfIDActionPerformed
+
+    private void tfName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfName1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfName1ActionPerformed
+
+    private void tfAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAgeActionPerformed
+
+    private void tfAnimalCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalCodeActionPerformed
+
+    private void tfAnimalName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalName1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalName1ActionPerformed
+
+    private void tfAnimalAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalAgeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalAgeActionPerformed
+
+    private void tfAnimalStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalStateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalStateActionPerformed
+
+    private void tfAnimalGender1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalGender1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalGender1ActionPerformed
+
+    private void tfAnimalOriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalOriginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalOriginActionPerformed
+
+    private void tfAnimalMammalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalMammalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAnimalMammalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,12 +501,36 @@ public class ZooWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddAnimal;
+    private javax.swing.JButton btnAddCostumer;
     private javax.swing.JButton btnGoBuyAnimalFood;
     private javax.swing.JButton btnGoBuyPeopleFood;
     private javax.swing.JButton btnGoBuyPet;
     private javax.swing.JButton btnGoBuyTicket3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField tfAge;
+    private javax.swing.JTextField tfAnimalAge;
+    private javax.swing.JTextField tfAnimalCode;
+    private javax.swing.JTextField tfAnimalGender1;
+    private javax.swing.JTextField tfAnimalMammal;
+    private javax.swing.JTextField tfAnimalName1;
+    private javax.swing.JTextField tfAnimalOrigin;
+    private javax.swing.JTextField tfAnimalState;
+    private javax.swing.JTextField tfID;
+    private javax.swing.JTextField tfName1;
     // End of variables declaration//GEN-END:variables
 }
