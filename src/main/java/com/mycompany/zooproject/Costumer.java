@@ -106,7 +106,6 @@ public class Costumer {
         this.plan = plan;
     }
     
-    
 
     /**
      * @return
@@ -118,9 +117,14 @@ public class Costumer {
     /**
      * @return
      */
-    public void makeOffer() {
-        // TODO implement here
+    public double makeOffer() {
+        Offer offer = new Offer();
+        return (1-offer.getOffer(plan))*purchaseAmount;
+    }
     
+    public float getPlanPercent(){
+        Offer offer = new Offer();
+        return offer.getOffer(plan)*100;
     }
     
     
