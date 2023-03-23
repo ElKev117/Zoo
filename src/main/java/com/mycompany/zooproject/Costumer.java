@@ -15,6 +15,7 @@ public class Costumer {
     private String ticketCode;
     private int purchaseNumber;
     private float purchaseAmount;
+    private int plan;
 
     
     /**
@@ -23,18 +24,21 @@ public class Costumer {
     public Costumer() {
     }
 
-    public Costumer(String name, String id, int age, String ticketCode, int purchaseNumber, float purchaseAmount) {
+    public Costumer(String name, String id, int age, String ticketCode, int purchaseNumber, float purchaseAmount, int plan) {
         this.name = name;
         this.id = id;
         this.age = age;
         this.ticketCode = ticketCode;
         this.purchaseNumber = purchaseNumber;
         this.purchaseAmount = purchaseAmount;
+        this.plan = plan;
     }
 
-    public Costumer(String name, String id) {
+    public Costumer(String name, String id, int plan) {
         this.name = name;
         this.id = id;
+        this.plan = plan;
+        
     }
 
     public Costumer(String ticketCode) {
@@ -90,13 +94,19 @@ public class Costumer {
         return purchaseAmount;
     }
     
-
-    /**
-     * Getters and setters
-     */
     public void setPurchaseAmount(float purchaseAmount) {
         this.purchaseAmount = purchaseAmount;
     }
+
+    public int getPlan() {
+        return plan;
+    }
+
+    public void setPlan(int plan) {
+        this.plan = plan;
+    }
+    
+    
 
     /**
      * @return
@@ -112,5 +122,7 @@ public class Costumer {
         // TODO implement here
     
     }
+    
+    
 
 }
