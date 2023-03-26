@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Offer implements Plans {
     /**
-     * 
+     * q
      */
     private float plan;
  
