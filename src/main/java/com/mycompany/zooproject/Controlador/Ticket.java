@@ -1,4 +1,5 @@
-package com.mycompany.zooproject;
+package com.mycompany.zooproject.Controlador;
+import com.mycompany.zooproject.Controlador.Sale;
 import java.util.*;
 
 /**

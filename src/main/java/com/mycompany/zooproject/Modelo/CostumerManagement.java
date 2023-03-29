@@ -1,6 +1,6 @@
-package com.mycompany.zooproject.Controlador;
-import com.mycompany.zooproject.Costumer;
-import com.mycompany.zooproject.Management;
+package com.mycompany.zooproject.Modelo;
+import com.mycompany.zooproject.Controlador.Costumer;
+import com.mycompany.zooproject.Controlador.Management;
 import java.util.*;
 
 /**
