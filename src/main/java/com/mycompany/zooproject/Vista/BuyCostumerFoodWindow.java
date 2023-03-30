@@ -193,10 +193,13 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
 
     private void btnBuyFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyFoodActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnBuyFoodActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
+        new ZooWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**

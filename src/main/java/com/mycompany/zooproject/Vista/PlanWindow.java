@@ -274,10 +274,14 @@ public class PlanWindow extends javax.swing.JFrame {
 
     private void btnBuyPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyPlanActionPerformed
         // TODO add your handling code here:
+        new TicketWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnBuyPlanActionPerformed
 
     private void btnBuyPet2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyPet2ActionPerformed
         // TODO add your handling code here:
+        new ZooWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnBuyPet2ActionPerformed
 
     /**

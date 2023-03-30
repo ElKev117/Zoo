@@ -31,7 +31,7 @@ public class ZooWindow extends javax.swing.JFrame {
         btnGoBuyAnimalFood = new javax.swing.JButton();
         btnGoBuyPeopleFood = new javax.swing.JButton();
         btnGoBuyPet = new javax.swing.JButton();
-        btnGoBuyTicket3 = new javax.swing.JButton();
+        btnGoPlan = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -102,14 +102,14 @@ public class ZooWindow extends javax.swing.JFrame {
             }
         });
 
-        btnGoBuyTicket3.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
-        btnGoBuyTicket3.setForeground(new java.awt.Color(51, 51, 51));
-        btnGoBuyTicket3.setText("Ir a comprar ticket");
-        btnGoBuyTicket3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
-        btnGoBuyTicket3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnGoBuyTicket3.addActionListener(new java.awt.event.ActionListener() {
+        btnGoPlan.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        btnGoPlan.setForeground(new java.awt.Color(51, 51, 51));
+        btnGoPlan.setText("Ir a planes");
+        btnGoPlan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
+        btnGoPlan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGoPlan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGoBuyTicket3ActionPerformed(evt);
+                btnGoPlanActionPerformed(evt);
             }
         });
 
@@ -386,7 +386,7 @@ public class ZooWindow extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnGoBuyAnimalFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnGoBuyTicket3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnGoBuyPeopleFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -404,7 +404,7 @@ public class ZooWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGoBuyTicket3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnGoBuyAnimalFood, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -430,19 +430,31 @@ public class ZooWindow extends javax.swing.JFrame {
 
     private void btnGoBuyAnimalFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBuyAnimalFoodActionPerformed
         // TODO add your handling code here:
+        new BuyFoodAnimalWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnGoBuyAnimalFoodActionPerformed
 
     private void btnGoBuyPeopleFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBuyPeopleFoodActionPerformed
         // TODO add your handling code here:
+        new BuyCostumerFoodWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnGoBuyPeopleFoodActionPerformed
 
     private void btnGoBuyPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBuyPetActionPerformed
         // TODO add your handling code here:
+        new BuyPetWindow().setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_btnGoBuyPetActionPerformed
 
-    private void btnGoBuyTicket3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBuyTicket3ActionPerformed
+    private void btnGoPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoPlanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGoBuyTicket3ActionPerformed
+        //new ZooWindow().setVisible(false);
+        //System.exit(0);
+        new PlanWindow().setVisible(true);
+        dispose();
+ 
+    }//GEN-LAST:event_btnGoPlanActionPerformed
 
     private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
         // TODO add your handling code here:
@@ -529,7 +541,7 @@ public class ZooWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnGoBuyAnimalFood;
     private javax.swing.JButton btnGoBuyPeopleFood;
     private javax.swing.JButton btnGoBuyPet;
-    private javax.swing.JButton btnGoBuyTicket3;
+    private javax.swing.JButton btnGoPlan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

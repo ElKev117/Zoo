@@ -257,6 +257,8 @@ public class TicketWindow extends javax.swing.JFrame {
 
     private void btnIrAZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrAZooActionPerformed
         // TODO add your handling code here:
+        new PlanWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnIrAZooActionPerformed
 
     /**
