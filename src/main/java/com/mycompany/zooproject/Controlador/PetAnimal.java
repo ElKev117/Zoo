@@ -22,8 +22,8 @@ public class PetAnimal extends Animal {
         super(name, code, age, gender);
     }
     
-    public PetAnimal(String name, String code, int age, char gender, String state, String origin, boolean mammal){
-        super(name, code, age, gender, state, origin, mammal);
+    public PetAnimal(String name, String code, int age, char gender, String state, String origin, boolean mammal, String habitat){
+        super(name, code, age, gender, state, origin, mammal, habitat);
     }
     
     

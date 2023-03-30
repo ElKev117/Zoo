@@ -15,6 +15,7 @@ public class Animal {
     private String state;
     private String origin;
     private boolean mammal;
+    private String habitat;
 
     
     /**
@@ -35,7 +36,7 @@ public class Animal {
         this.gender = gender;
     }
 
-    public Animal(String name, String code, int age, char gender, String state, String origin, boolean mammal) {
+    public Animal(String name, String code, int age, char gender, String state, String origin, boolean mammal, String habitat) {
         this.name = name;
         this.code = code;
         this.age = age;
@@ -43,6 +44,7 @@ public class Animal {
         this.state = state;
         this.origin = origin;
         this.mammal = mammal;
+        this.habitat = habitat;
     }
     
   
@@ -110,6 +112,13 @@ public class Animal {
         this.mammal = mammal;
     }
 
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
 
     /**
      * @return
