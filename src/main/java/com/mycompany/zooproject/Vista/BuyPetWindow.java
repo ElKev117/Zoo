@@ -4,6 +4,10 @@
  */
 package com.mycompany.zooproject.Vista;
 
+import com.mycompany.zooproject.Controlador.PetSale;
+import static java.lang.Float.parseFloat;
+import java.time.LocalDate;
+
 /**
  *
  * @author USUARIO
@@ -36,7 +40,7 @@ public class BuyPetWindow extends javax.swing.JFrame {
         tfBuyPetName = new javax.swing.JTextField();
         tfBuyPetCode = new javax.swing.JTextField();
         tfBuyPetPrice = new javax.swing.JTextField();
-        tfBuyPetPrice1 = new javax.swing.JTextField();
+        tfBuyPetDate = new javax.swing.JTextField();
         btnBuyPet = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
@@ -67,7 +71,6 @@ public class BuyPetWindow extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Precio*");
 
-        tfBuyPetName.setBackground(new java.awt.Color(255, 255, 255));
         tfBuyPetName.setForeground(new java.awt.Color(51, 51, 51));
         tfBuyPetName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +78,6 @@ public class BuyPetWindow extends javax.swing.JFrame {
             }
         });
 
-        tfBuyPetCode.setBackground(new java.awt.Color(255, 255, 255));
         tfBuyPetCode.setForeground(new java.awt.Color(51, 51, 51));
         tfBuyPetCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +85,6 @@ public class BuyPetWindow extends javax.swing.JFrame {
             }
         });
 
-        tfBuyPetPrice.setBackground(new java.awt.Color(255, 255, 255));
         tfBuyPetPrice.setForeground(new java.awt.Color(51, 51, 51));
         tfBuyPetPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,15 +92,13 @@ public class BuyPetWindow extends javax.swing.JFrame {
             }
         });
 
-        tfBuyPetPrice1.setBackground(new java.awt.Color(255, 255, 255));
-        tfBuyPetPrice1.setForeground(new java.awt.Color(51, 51, 51));
-        tfBuyPetPrice1.addActionListener(new java.awt.event.ActionListener() {
+        tfBuyPetDate.setForeground(new java.awt.Color(51, 51, 51));
+        tfBuyPetDate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfBuyPetPrice1ActionPerformed(evt);
+                tfBuyPetDateActionPerformed(evt);
             }
         });
 
-        btnBuyPet.setBackground(new java.awt.Color(255, 255, 255));
         btnBuyPet.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnBuyPet.setForeground(new java.awt.Color(51, 51, 51));
         btnBuyPet.setText("Comprar mascota");
@@ -109,7 +108,6 @@ public class BuyPetWindow extends javax.swing.JFrame {
             }
         });
 
-        btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnVolver.setForeground(new java.awt.Color(51, 51, 51));
         btnVolver.setText("Volver");
@@ -142,7 +140,7 @@ public class BuyPetWindow extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tfBuyPetPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfBuyPetDate, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(187, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(122, 122, 122)
@@ -170,7 +168,7 @@ public class BuyPetWindow extends javax.swing.JFrame {
                     .addComponent(tfBuyPetPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfBuyPetPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfBuyPetDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -205,12 +203,21 @@ public class BuyPetWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfBuyPetPriceActionPerformed
 
-    private void tfBuyPetPrice1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBuyPetPrice1ActionPerformed
+    private void tfBuyPetDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBuyPetDateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfBuyPetPrice1ActionPerformed
+    }//GEN-LAST:event_tfBuyPetDateActionPerformed
 
     private void btnBuyPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyPetActionPerformed
         // TODO add your handling code here:
+        PetSale petSale = new PetSale(
+                parseFloat(tfBuyPetPrice.getText()),
+                tfBuyPetDate.getText(),
+                tfBuyPetName.getText(),
+                tfBuyPetCode.getText());
+        
+        ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(petSale.getPrice());
+
+        
     }//GEN-LAST:event_btnBuyPetActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -222,37 +229,6 @@ public class BuyPetWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuyPetWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuyPetWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuyPetWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuyPetWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BuyPetWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuyPet;
@@ -265,8 +241,8 @@ public class BuyPetWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField tfBuyPetCode;
+    private javax.swing.JTextField tfBuyPetDate;
     private javax.swing.JTextField tfBuyPetName;
     private javax.swing.JTextField tfBuyPetPrice;
-    private javax.swing.JTextField tfBuyPetPrice1;
     // End of variables declaration//GEN-END:variables
 }

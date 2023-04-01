@@ -4,6 +4,9 @@
  */
 package com.mycompany.zooproject.Vista;
 
+import com.mycompany.zooproject.Controlador.Costumer;
+import com.mycompany.zooproject.Controlador.Plans;
+
 /**
  *
  * @author USUARIO
@@ -51,6 +54,7 @@ public class PlanWindow extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Planes");
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -60,7 +64,7 @@ public class PlanWindow extends javax.swing.JFrame {
         jTextArea1.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(51, 51, 51));
         jTextArea1.setRows(5);
-        jTextArea1.setText("Puedes elegir entre los diferentes planes que tenemos para tí, puedes ir desde tener ningún plan a tener nuestro plan más avanzado, los planes están diseñados para dar una mayor\nsatisfación y comodidad a nuestros clientes:\n\nNota: recuerda que si eliges la opcion \"Ir sin plan\" no podrás acceder a los descuentos especializados que tenemos para tí\n\nPlan 1:\n\nPlan 2:\n\nPlan 3:\n\nPlan 4:\n\nPlan 5:");
+        jTextArea1.setText("Puedes elegir entre los diferentes planes que tenemos para tí, puedes ir desde tener ningún plan \na tener nuestro plan más avanzado, los planes están diseñados para dar una mayor satisfacción y \ncomodidad a nuestros clientes:\n\nNota: recuerda que si eliges la opcion \"Ir sin plan\" no podrás acceder a los descuentos especializados \nque tenemos para tí\n\nPlan 1: Incluye un descuento del 5% todas tus compras. Tiene un valor de $2 US mensuales.  \n\nPlan 2: Incluye un descuento del 8% todas tus compras. Tiene un valor de $4 US mensuales.  \n\nPlan 3: Incluye un descuento del 10% todas tus compras. Tiene un valor de $5 US mensuales.  \n\nPlan 4: Incluye un descuento del 15% todas tus compras. Tiene un valor de $20 US anuales.  \n\nPlan 5: Incluye un descuento del 20% todas tus compras. Tiene un valor de $30 US anuales.  ");
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 18)); // NOI18N
@@ -127,7 +131,6 @@ public class PlanWindow extends javax.swing.JFrame {
             }
         });
 
-        btnAvanzar.setBackground(new java.awt.Color(255, 255, 255));
         btnAvanzar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnAvanzar.setForeground(new java.awt.Color(51, 51, 51));
         btnAvanzar.setText("SIguiente");
@@ -137,7 +140,6 @@ public class PlanWindow extends javax.swing.JFrame {
             }
         });
 
-        btnBuyPlan.setBackground(new java.awt.Color(255, 255, 255));
         btnBuyPlan.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnBuyPlan.setForeground(new java.awt.Color(51, 51, 51));
         btnBuyPlan.setText("Comprar plan");
@@ -147,7 +149,6 @@ public class PlanWindow extends javax.swing.JFrame {
             }
         });
 
-        btnBuyPet2.setBackground(new java.awt.Color(255, 255, 255));
         btnBuyPet2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnBuyPet2.setForeground(new java.awt.Color(51, 51, 51));
         btnBuyPet2.setText("Volver");
@@ -162,40 +163,38 @@ public class PlanWindow extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(568, 568, 568)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel1)
-                        .addGap(88, 88, 88)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rBPlan5)
-                            .addComponent(rBPlan4)
-                            .addComponent(rBPlan3)
-                            .addComponent(rBPlan2)
-                            .addComponent(rBPlan1)
-                            .addComponent(rBPlan0))))
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(btnBuyPet2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBuyPlan)
-                .addGap(311, 311, 311)
+                .addGap(69, 69, 69)
                 .addComponent(btnAvanzar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(267, 267, 267))
+                .addGap(224, 224, 224))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(88, 88, 88)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rBPlan5)
+                    .addComponent(rBPlan4)
+                    .addComponent(rBPlan3)
+                    .addComponent(rBPlan2)
+                    .addComponent(rBPlan1)
+                    .addComponent(rBPlan0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 920, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 929, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -223,7 +222,9 @@ public class PlanWindow extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +235,7 @@ public class PlanWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,12 +271,32 @@ public class PlanWindow extends javax.swing.JFrame {
 
     private void btnAvanzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarActionPerformed
         // TODO add your handling code here:
+        new TicketWindow().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnAvanzarActionPerformed
 
     private void btnBuyPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyPlanActionPerformed
-        // TODO add your handling code here:
-        new TicketWindow().setVisible(true);
-        dispose();
+        // TODO add your handling code hereee:
+        //System.out.println("=============================================================");
+        if (rBPlan0.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(0);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_0);
+        } else if (rBPlan1.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(1);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_1);
+        } else if (rBPlan2.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(2);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_2);
+        } else if (rBPlan3.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(3);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_3);
+        } else if (rBPlan4.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(4);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_4);
+        } else if (rBPlan5.isSelected()){
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPlan(5);
+            ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(Plans.AMOUNT_PLAN_5);}
+        //System.out.println(ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).getName());  
     }//GEN-LAST:event_btnBuyPlanActionPerformed
 
     private void btnBuyPet2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyPet2ActionPerformed
@@ -287,37 +308,6 @@ public class PlanWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PlanWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PlanWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PlanWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PlanWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PlanWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgPlanes;

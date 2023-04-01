@@ -8,28 +8,24 @@ public class PetFoodSale extends Sale {
     /**
      * 
      */
-    private float price;
     private String product;
-    private int quantity;
-    
+
     /**
      * Default constructor
      */
-    public PetFoodSale() {
+    public PetFoodSale(String product, float price, int quantity) {    
+        super(price, quantity);
+        this.product = product;
+        // TODO implement here
     }
-
+    
+    public PetFoodSale() {    
+        // TODO implement here
+    }
+       
     /**
      * Getters and setters
      */
-    public float getPrice() {
-        return price;
-        // TODO implement here
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
     public String getProduct() {
         return product;
     }
@@ -37,15 +33,7 @@ public class PetFoodSale extends Sale {
     public void setProduct(String product) {
         this.product = product;
     }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
     
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
     /**
      * @return

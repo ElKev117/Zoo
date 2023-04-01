@@ -12,4 +12,10 @@ public class CostumerFoodSale extends FoodSale {
     public CostumerFoodSale() {
     }
 
+    public CostumerFoodSale(String product, float price, int quantity) {
+        super(product, price, quantity);
+    }
+    
+    
+
 }

@@ -14,7 +14,7 @@ public class Costumer {
     private int age;
     private String ticketCode;
     private int purchaseNumber;
-    private float purchaseAmount;
+    private float purchaseAmount = 0;
     private int plan;
 
     
@@ -34,10 +34,10 @@ public class Costumer {
         this.plan = plan;
     }
 
-    public Costumer(String name, String id, int plan) {
+    public Costumer(String name, String id, int age) {
         this.name = name;
         this.id = id;
-        this.plan = plan;
+        this.age = age;
         
     }
 
@@ -95,7 +95,7 @@ public class Costumer {
     }
     
     public void setPurchaseAmount(float purchaseAmount) {
-        this.purchaseAmount = purchaseAmount;
+        this.purchaseAmount += purchaseAmount;
     }
 
     public int getPlan() {

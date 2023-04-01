@@ -1,6 +1,5 @@
 package com.mycompany.zooproject.Modelo;
 import com.mycompany.zooproject.Controlador.Costumer;
-import com.mycompany.zooproject.Controlador.Management;
 import java.util.*;
 
 /**
@@ -10,7 +9,7 @@ public class CostumerManagement extends Management {
     /**
      * Parameters
      */
-    private ArrayList<Costumer> costumer;
+    private ArrayList<Costumer> costumer = new ArrayList<>();
     
     /**
      * Constructor

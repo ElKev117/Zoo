@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -47,7 +47,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -67,49 +70,45 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="568" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rBPlan5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rBPlan4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rBPlan3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rBPlan2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rBPlan1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rBPlan0" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="btnBuyPet2" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace pref="324" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnBuyPlan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Component id="btnAvanzar" min="-2" pref="112" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="267" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="rBPlan5" min="-2" max="-2" attributes="0"/>
+                          <Component id="rBPlan4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rBPlan3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rBPlan2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rBPlan1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="rBPlan0" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="920" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="929" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="44" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="292" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -146,6 +145,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Planes"/>
               </Properties>
             </Component>
@@ -176,7 +176,7 @@
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
                     <Property name="rows" type="int" value="5"/>
-                    <Property name="text" type="java.lang.String" value="Puedes elegir entre los diferentes planes que tenemos para t&#xed;, puedes ir desde tener ning&#xfa;n plan a tener nuestro plan m&#xe1;s avanzado, los planes est&#xe1;n dise&#xf1;ados para dar una mayor&#xa;satisfaci&#xf3;n y comodidad a nuestros clientes:&#xa;&#xa;Nota: recuerda que si eliges la opcion &quot;Ir sin plan&quot; no podr&#xe1;s acceder a los descuentos especializados que tenemos para t&#xed;&#xa;&#xa;Plan 1:&#xa;&#xa;Plan 2:&#xa;&#xa;Plan 3:&#xa;&#xa;Plan 4:&#xa;&#xa;Plan 5:"/>
+                    <Property name="text" type="java.lang.String" value="Puedes elegir entre los diferentes planes que tenemos para t&#xed;, puedes ir desde tener ning&#xfa;n plan &#xa;a tener nuestro plan m&#xe1;s avanzado, los planes est&#xe1;n dise&#xf1;ados para dar una mayor satisfacci&#xf3;n y &#xa;comodidad a nuestros clientes:&#xa;&#xa;Nota: recuerda que si eliges la opcion &quot;Ir sin plan&quot; no podr&#xe1;s acceder a los descuentos especializados &#xa;que tenemos para t&#xed;&#xa;&#xa;Plan 1: Incluye un descuento del 5% todas tus compras. Tiene un valor de $2 US mensuales.  &#xa;&#xa;Plan 2: Incluye un descuento del 8% todas tus compras. Tiene un valor de $4 US mensuales.  &#xa;&#xa;Plan 3: Incluye un descuento del 10% todas tus compras. Tiene un valor de $5 US mensuales.  &#xa;&#xa;Plan 4: Incluye un descuento del 15% todas tus compras. Tiene un valor de $20 US anuales.  &#xa;&#xa;Plan 5: Incluye un descuento del 20% todas tus compras. Tiene un valor de $30 US anuales.  "/>
                   </Properties>
                 </Component>
               </SubComponents>

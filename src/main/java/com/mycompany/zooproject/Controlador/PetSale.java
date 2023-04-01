@@ -10,7 +10,7 @@ public class PetSale extends PetAnimal {
      * Parameters
      */
     private float price;
-    private Date saleDate;
+    private String saleDate;
 
     /**
      * Default constructor
@@ -19,13 +19,13 @@ public class PetSale extends PetAnimal {
         
     }
 
-    public PetSale(float price, Date saleDate, String name, String code) {
+    public PetSale(float price, String saleDate, String name, String code) {
         super(name, code);
         this.price = price;
         this.saleDate = saleDate;
     }
 
-    public PetSale(float price, Date saleDate) {
+    public PetSale(float price, String saleDate) {
         this.price = price;
         this.saleDate = saleDate;
     }
@@ -44,11 +44,11 @@ public class PetSale extends PetAnimal {
         this.price = 0;
     }
 
-    public Date getSaleDate() {
+    public String getSaleDate() {
         return saleDate;
     }
 
-    public void setSaleDate(Date saleDate) {
+    public void setSaleDate(String saleDate) {
         this.saleDate = saleDate;
     }
 

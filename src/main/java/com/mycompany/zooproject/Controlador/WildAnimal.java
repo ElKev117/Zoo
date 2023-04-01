@@ -23,12 +23,12 @@ public class WildAnimal extends Animal {
         this.dangerLevel = dangerLevel;
     }
     
-    public WildAnimal(String name, String code, int age, char gender, int dangerLevel){
+    public WildAnimal(String name, String code, int age, String gender, int dangerLevel){
         super(name, code, age, gender);
         this.dangerLevel = dangerLevel;
     }
     
-    public WildAnimal(String name, String code, int age, char gender, String state, String origin, boolean mammal, int dangerLevel, String habitat){
+    public WildAnimal(String name, String code, int age, String gender, String state, String origin, boolean mammal, int dangerLevel, String habitat){
         super(name, code, age, gender, state, origin, mammal, habitat);
         this.dangerLevel = dangerLevel;
     }

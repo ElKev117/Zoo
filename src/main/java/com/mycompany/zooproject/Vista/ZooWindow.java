@@ -4,11 +4,25 @@
  */
 package com.mycompany.zooproject.Vista;
 
+import com.itextpdf.text.DocumentException;
+import com.mycompany.zooproject.Controlador.Animal;
+import com.mycompany.zooproject.Controlador.Costumer;
+import com.mycompany.zooproject.Modelo.AnimalManagement;
+import com.mycompany.zooproject.Modelo.CostumerManagement;
+import java.io.FileNotFoundException;
+import static java.lang.Integer.parseInt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author brayan
  */
 public class ZooWindow extends javax.swing.JFrame {
+    //Parameters
+    public static CostumerManagement costumers = new CostumerManagement();
+    public static AnimalManagement animals = new AnimalManagement();
+    public static int currentCostumer = -1;
 
     /**
      * Creates new form ZooWindow
@@ -26,6 +40,7 @@ public class ZooWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        javax.swing.ButtonGroup bgMammal = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnGoBuyAnimalFood = new javax.swing.JButton();
@@ -55,10 +70,13 @@ public class ZooWindow extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         tfAnimalOrigin = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        tfAnimalMammal = new javax.swing.JTextField();
         btnAddAnimal = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         tfAnimalHabitat = new javax.swing.JTextField();
+        rbMammalYes = new javax.swing.JRadioButton();
+        rbMammalNo = new javax.swing.JRadioButton();
+        btnGetOut = new javax.swing.JButton();
+        btnGeneratePDF1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,7 +84,7 @@ public class ZooWindow extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Likhan", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Zoo");
+        jLabel1.setText("Zoo Patitas Felices");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnGoBuyAnimalFood.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
@@ -147,6 +165,11 @@ public class ZooWindow extends javax.swing.JFrame {
 
         btnAddCostumer.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnAddCostumer.setText("Agregar cliente");
+        btnAddCostumer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCostumerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -250,14 +273,13 @@ public class ZooWindow extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
         jLabel11.setText("Mamífero");
 
-        tfAnimalMammal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfAnimalMammalActionPerformed(evt);
-            }
-        });
-
         btnAddAnimal.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnAddAnimal.setText("Agregar animal");
+        btnAddAnimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAnimalActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Liberation Mono", 1, 15)); // NOI18N
         jLabel12.setText("Hábitat");
@@ -267,6 +289,17 @@ public class ZooWindow extends javax.swing.JFrame {
                 tfAnimalHabitatActionPerformed(evt);
             }
         });
+
+        bgMammal.add(rbMammalYes);
+        rbMammalYes.setText("Sí");
+        rbMammalYes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbMammalYesActionPerformed(evt);
+            }
+        });
+
+        bgMammal.add(rbMammalNo);
+        rbMammalNo.setText("No");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -308,8 +341,11 @@ public class ZooWindow extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAddAnimal)
-                            .addComponent(tfAnimalMammal, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(rbMammalYes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbMammalNo)))))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,14 +375,15 @@ public class ZooWindow extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(tfAnimalOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(tfAnimalMammal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(rbMammalYes)
+                    .addComponent(rbMammalNo))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(tfAnimalHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(btnAddAnimal)
                 .addGap(14, 14, 14))
         );
@@ -367,9 +404,31 @@ public class ZooWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(1, 1, 1))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        btnGetOut.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        btnGetOut.setForeground(new java.awt.Color(51, 51, 51));
+        btnGetOut.setText("Salir");
+        btnGetOut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
+        btnGetOut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGetOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGetOutActionPerformed(evt);
+            }
+        });
+
+        btnGeneratePDF1.setFont(new java.awt.Font("AnjaliOldLipi", 1, 18)); // NOI18N
+        btnGeneratePDF1.setForeground(new java.awt.Color(51, 51, 51));
+        btnGeneratePDF1.setText("Cerrar Caja + Factura");
+        btnGeneratePDF1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(204, 204, 204), new java.awt.Color(153, 153, 153)));
+        btnGeneratePDF1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGeneratePDF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGeneratePDF1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -382,35 +441,42 @@ public class ZooWindow extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 311, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnGoBuyAnimalFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnGoBuyPeopleFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnGoBuyPeopleFood, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnGeneratePDF1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnGetOut, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(292, 292, 292))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(335, 335, 335))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btnGoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGoBuyPet, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGoBuyAnimalFood, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGoBuyPeopleFood, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGetOut, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGeneratePDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -492,52 +558,110 @@ public class ZooWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAnimalOriginActionPerformed
 
-    private void tfAnimalMammalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalMammalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfAnimalMammalActionPerformed
-
     private void tfAnimalHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAnimalHabitatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfAnimalHabitatActionPerformed
 
+    private void btnGetOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetOutActionPerformed
+        //Printing all the costumers in the console
+        System.out.println("COSTUMERS");
+        for (Costumer c : costumers.getCostumer()){
+            System.out.println(
+                    "name : " + c.getName()+ "\n" +
+                    "Age: " + c.getAge() + "\n" +
+                    "Plan: "+ c.getPlan() + "\n");
+        }
+        
+        //Printing all the animals in the console
+        System.out.println("\n"+"ANIMALS");
+        for(Animal a:animals.getAnimal()){
+            System.out.println(
+                    a.getName() + " " 
+                  + a.getCode() + " " 
+                  + a.getAge() + " " 
+                  + a.getGender() + " "
+                  + a.getState() + " "
+                  + a.getOrigin() + " "
+                  + a.getMammal() + " "
+                  + a.getHabitat() + "\n"
+            );
+        }
+
+        dispose();
+    }//GEN-LAST:event_btnGetOutActionPerformed
+
+    private void btnGeneratePDF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeneratePDF1ActionPerformed
+        // TODO add your handling code here:
+        GeneratePDF pdfFile = new GeneratePDF();
+        try {
+            pdfFile.generatePDF();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ZooWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(ZooWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnGeneratePDF1ActionPerformed
+
+    private void btnAddCostumerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCostumerActionPerformed
+        // TODO add your handling code here:
+        Costumer costumer = new Costumer(
+                tfName1.getText(), 
+                tfID.getText(), 
+                parseInt(tfAge.getText()));
+        
+        costumers.addCostumer(costumer);
+        currentCostumer += 1;
+        System.out.println(costumer.getName() + " " + costumer.getAge() + " " + costumer.getId());
+        
+        //Cleaning fields
+        tfName1.setText(""); 
+        tfID.setText(""); 
+        tfAge.setText("");
+    }//GEN-LAST:event_btnAddCostumerActionPerformed
+
+    private void rbMammalYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMammalYesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbMammalYesActionPerformed
+
+    private void btnAddAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAnimalActionPerformed
+        // TODO add your handling code here:
+        boolean mammal = false;
+        if(rbMammalYes.isSelected()){
+            mammal = true;
+        } 
+        Animal animal = new Animal(
+                tfAnimalName1.getText(), 
+                tfAnimalCode.getText(), 
+                parseInt(tfAnimalAge.getText()),
+                tfAnimalGender1.getText(),
+                tfAnimalState.getText(),
+                tfAnimalOrigin.getText(),
+                mammal,
+                tfAnimalHabitat.getText());
+        
+        animals.addAnimal(animal);
+        
+        //Cleaning fields
+        tfAnimalName1.setText("");
+        tfAnimalCode.setText("");
+        tfAnimalAge.setText("");
+        tfAnimalGender1.setText("");
+        tfAnimalState.setText("");
+        tfAnimalOrigin.setText("");
+        tfAnimalHabitat.setText("");
+        rbMammalNo.setSelected(false);
+        rbMammalYes.setSelected(false);
+    }//GEN-LAST:event_btnAddAnimalActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ZooWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ZooWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ZooWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ZooWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ZooWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddAnimal;
     private javax.swing.JButton btnAddCostumer;
+    private javax.swing.JButton btnGeneratePDF1;
+    private javax.swing.JButton btnGetOut;
     private javax.swing.JButton btnGoBuyAnimalFood;
     private javax.swing.JButton btnGoBuyPeopleFood;
     private javax.swing.JButton btnGoBuyPet;
@@ -558,12 +682,13 @@ public class ZooWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton rbMammalNo;
+    private javax.swing.JRadioButton rbMammalYes;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfAnimalAge;
     private javax.swing.JTextField tfAnimalCode;
     private javax.swing.JTextField tfAnimalGender1;
     private javax.swing.JTextField tfAnimalHabitat;
-    private javax.swing.JTextField tfAnimalMammal;
     private javax.swing.JTextField tfAnimalName1;
     private javax.swing.JTextField tfAnimalOrigin;
     private javax.swing.JTextField tfAnimalState;

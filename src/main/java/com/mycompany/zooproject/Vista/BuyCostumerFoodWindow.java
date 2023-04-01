@@ -4,6 +4,10 @@
  */
 package com.mycompany.zooproject.Vista;
 
+import com.mycompany.zooproject.Controlador.CostumerFoodSale;
+import static java.lang.Float.parseFloat;
+import static java.lang.Integer.parseInt;
+
 /**
  *
  * @author USUARIO
@@ -28,7 +32,7 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        tfBuyFood = new javax.swing.JTextField();
+        tfBuyFoodProduct = new javax.swing.JTextField();
         tfBuyFoodPrice = new javax.swing.JTextField();
         tfBuyFoodQuantity = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -47,15 +51,13 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
         jLabel1.setText("Venta de comida");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        tfBuyFood.setBackground(new java.awt.Color(255, 255, 255));
-        tfBuyFood.setForeground(new java.awt.Color(51, 51, 51));
-        tfBuyFood.addActionListener(new java.awt.event.ActionListener() {
+        tfBuyFoodProduct.setForeground(new java.awt.Color(51, 51, 51));
+        tfBuyFoodProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfBuyFoodActionPerformed(evt);
+                tfBuyFoodProductActionPerformed(evt);
             }
         });
 
-        tfBuyFoodPrice.setBackground(new java.awt.Color(255, 255, 255));
         tfBuyFoodPrice.setForeground(new java.awt.Color(51, 51, 51));
         tfBuyFoodPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +65,6 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
             }
         });
 
-        tfBuyFoodQuantity.setBackground(new java.awt.Color(255, 255, 255));
         tfBuyFoodQuantity.setForeground(new java.awt.Color(51, 51, 51));
         tfBuyFoodQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +84,6 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cantidad");
 
-        btnBuyFood.setBackground(new java.awt.Color(255, 255, 255));
         btnBuyFood.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnBuyFood.setForeground(new java.awt.Color(51, 51, 51));
         btnBuyFood.setText("Comprar comida");
@@ -93,7 +93,6 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
             }
         });
 
-        btnVolver.setBackground(new java.awt.Color(255, 255, 255));
         btnVolver.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnVolver.setForeground(new java.awt.Color(51, 51, 51));
         btnVolver.setText("Volver");
@@ -133,7 +132,7 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
                     .addGap(126, 126, 126)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(37, 37, 37)
-                    .addComponent(tfBuyFood, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfBuyFoodProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(124, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -159,7 +158,7 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
                     .addGap(131, 131, 131)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(tfBuyFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfBuyFoodProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(431, Short.MAX_VALUE)))
         );
 
@@ -179,9 +178,9 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfBuyFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBuyFoodActionPerformed
+    private void tfBuyFoodProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBuyFoodProductActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfBuyFoodActionPerformed
+    }//GEN-LAST:event_tfBuyFoodProductActionPerformed
 
     private void tfBuyFoodPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBuyFoodPriceActionPerformed
         // TODO add your handling code here:
@@ -193,6 +192,12 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
 
     private void btnBuyFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuyFoodActionPerformed
         // TODO add your handling code here:
+        CostumerFoodSale costumerFoodSale = new CostumerFoodSale(
+                tfBuyFoodProduct.getText(), 
+                parseFloat(tfBuyFoodPrice.getText()), 
+                parseInt(tfBuyFoodQuantity.getText()));
+        
+        ZooWindow.costumers.getCostumer().get(ZooWindow.currentCostumer).setPurchaseAmount(costumerFoodSale.getPrice()*parseInt(tfBuyFoodQuantity.getText()));
         
     }//GEN-LAST:event_btnBuyFoodActionPerformed
 
@@ -205,37 +210,6 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuyCostumerFoodWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuyCostumerFoodWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuyCostumerFoodWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuyCostumerFoodWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BuyCostumerFoodWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuyFood;
@@ -245,8 +219,8 @@ public class BuyCostumerFoodWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tfBuyFood;
     private javax.swing.JTextField tfBuyFoodPrice;
+    private javax.swing.JTextField tfBuyFoodProduct;
     private javax.swing.JTextField tfBuyFoodQuantity;
     // End of variables declaration//GEN-END:variables
 }

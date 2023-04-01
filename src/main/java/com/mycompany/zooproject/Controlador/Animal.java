@@ -11,7 +11,7 @@ public class Animal {
     private String name;
     private String code;
     private int age;
-    private char gender;
+    private String gender;
     private String state;
     private String origin;
     private boolean mammal;
@@ -19,7 +19,7 @@ public class Animal {
 
     
     /**
-     * Constructors
+     * Constructorssssvfffffff
      */
     public Animal() {
     }
@@ -29,14 +29,14 @@ public class Animal {
         this.code = code;
     }
 
-    public Animal(String name, String code, int age, char gender) {
+    public Animal(String name, String code, int age, String gender) {
         this.name = name;
         this.code = code;
         this.age = age;
         this.gender = gender;
     }
 
-    public Animal(String name, String code, int age, char gender, String state, String origin, boolean mammal, String habitat) {
+    public Animal(String name, String code, int age, String gender, String state, String origin, boolean mammal, String habitat) {
         this.name = name;
         this.code = code;
         this.age = age;
@@ -78,14 +78,12 @@ public class Animal {
         this.age = 0;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
-        if (Character.toUpperCase(gender)=='M' || Character.toUpperCase(gender)=='F')
-            this.gender = gender;
-        this.gender = 'N';
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getState() {
@@ -119,6 +117,16 @@ public class Animal {
     public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
+    
+    public boolean getMammal(){
+        return mammal;
+    }
+    
+    public void getMammal(boolean mammal){
+        this.mammal = mammal;
+    }
+    
+    
 
     /**
      * @return

@@ -4,13 +4,17 @@
 
 package com.mycompany.zooproject.Controlador;
 
+import com.mycompany.zooproject.Vista.ZooWindow;
+
 /**
  *
  * @author brayan
  */
 public class ZooProject {
-
+    //Wiiii
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ZooWindow window = new ZooWindow();
+        window.setVisible(true);
+        window.setLocationRelativeTo(null);
     }
 }
